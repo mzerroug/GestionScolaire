@@ -1,0 +1,31 @@
+﻿@model Matiere
+<h1>Ajouter une matiere</h1>
+<br />
+<form method="post">
+    @*m=margin and p=pading*@
+    <div class="border p-3 mt-4">
+        <div row="row pd-3">
+            <h2 class="text-primary">Ajouter une matiere</h2>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="nb-3">
+            <label asp-for="NomMatiere"></label>
+            <input asp-for="NomMatiere" class="form-control" />
+            <span asp-validation-for="NomMatiere" class="text-danger"></span>
+        </div>
+        <div class="nb-3">
+            <label asp-for="NbrMatiere"></label>
+            <input asp-for="NbrMatiere" class="form-control" />
+            <span asp-validation-for="NbrMatiere" class="text-danger"></span>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Ajouter Matiere</button>
+        <a asp-controller="Matiere" asp-action="Index" class="btn btn-secondary">Back to Matiere</a>
+    </div>
+</form>
+<!--Client Side validation-->
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
